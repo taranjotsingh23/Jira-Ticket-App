@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6a6f8c;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+.login-box {
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 528px;
+    position: relative;
+    background: url(https://images.unsplash.com/photo-1507208773393-40d9fc670acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80) no-repeat center;
+    box-shadow: 0px 0px 13px 5px white;;
+    border-radius: 25px;
+}
+
+.login-snip {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 65px 70px 50px 70px;
+    background: rgba(0, 77, 77, .9);
+    border-radius: 25px;
+}
+
+.login-snip .login,
+.login-snip .sign-up-form {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear
+}
+
+.login-snip .sign-in,
+.login-snip .sign-up,
+.login-space .group .check {
+    display: none
+}
+
+.login-snip .tab,
+.login-space .group .label,
+.login-space .group .button {
+    text-transform: uppercase
+}
+
+.login-snip .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent
+}
+
+.login-snip .sign-in:checked+.tab,
+.login-snip .sign-up:checked+.tab {
+    color: #fff;
+    border-color: #1161ee
+}
+
+.login-space {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d
+}
+
+.login-space .group {
+    margin-bottom: 15px;
+}
+
+.login-space .group .label,
+.login-space .group .input,
+.login-space .group .button {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-space .group .input,
+.login-space .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.login-space .group .label {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.login-space .group .button {
+    background: #1161ee;
+}
+
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+    transform: rotate(0);
+}
+
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+    transform: rotate(0);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hr {
+    height: 2px;
+    margin: 60px 0 45px 0;
+    background: rgba(255, 255, 255, .2);
+    margin-top: 37px;
+}
+
+.foot {
+    margin-top: -20px;
+    text-align: center;
+}
+
+.foot:hover {
+    color: red;
+}
+
+::placeholder {
+    color: #b3b3b3;
+}
+
+#login-username,#login-password,#signUp-username,#signUp-password,#signUp-Repeatpassword,#signUp-emailID,#forgotPassword-emailID {
+    font-size: 15.5px;
+}
+
+</style>
+</head>
+<body>
+    <div class="login-box">
+        <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-space">
+                <div class="login">
+                    <div class="group"> <label for="user" class="label">Username</label> <input id="login-username" type="text" class="input" placeholder="Enter your Username"> </div>
+                    <div class="group"> <label for="pass" class="label">Password</label> <input id="login-password" type="password" class="input" data-type="password" placeholder="Enter your Password"> </div>
+                    <a href="" class="link">
+                        <div class="group"> <input id="signIn-btn" type="submit" class="button" value="Sign In" style="margin-top: 1rem;"> </div>
+                    </a>
+                    <div class="hr"></div>
+                    <div class="foot"> Forgot Password? </div>
+                </div>
+                <div class="sign-up-form">
+                    <div class="group"> <label for="user" class="label">Username</label> <input id="signUp-username" type="text" class="input" placeholder="Create your Username"> </div>
+                    <div class="group"> <label for="pass" class="label">Password</label> <input id="signUp-password" type="password" class="input" data-type="password" placeholder="Create your Password"> </div>
+                    <div class="group"> <label for="pass" class="label">Repeat Password</label> <input id="signUp-Repeatpassword" type="password" class="input" data-type="password" placeholder="Repeat your Password"> </div>
+                    <div class="group"> <label for="pass" class="label">Email Address</label> <input id="signUp-emailID" type="email" class="input" placeholder="Enter your Email Address"> </div>
+                    <div class="group"> <input id="signUp-btn" type="submit" class="button" value="Sign Up"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="loginPageScript.js"></script>
+</body>
+</html>
