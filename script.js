@@ -8,7 +8,10 @@ let modalVisible=false;
 let addBtn=document.querySelector(".add");
 let body=document.querySelector("body");
 body.spellcheck=false;
-let uid = new ShortUniqueId();
+
+// let uid = new ShortUniqueId();
+let uid = Math.random().toString(36).slice(-6);
+
 let colors={
    pink: "#d595aa",
    blue: "#5ecdde",
@@ -122,7 +125,11 @@ addBtn.addEventListener("click", function(e){
             let task=e.currentTarget.innerText;
             let selectedModalFilter=document.querySelector(".active-modal-filter");
             let color=selectedModalFilter.classList[1];
-            let id=uid();
+
+            // let id=uid();
+            let uid = Math.random().toString(36).slice(-6);
+            let id=uid;
+
             modal.remove();
             modalVisible=false;
             let ticket=document.createElement("div");
